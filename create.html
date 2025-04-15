@@ -1,0 +1,162 @@
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <title>Invito Royale : Your Event , Your Style</title>
+            <link rel="stylesheet" href="x_main1.css" />
+
+            <script>
+                function showInvitation(type) {
+                document.querySelectorAll('.container').forEach(div => div.style.display = 'none');
+                document.getElementById(type).style.display = 'block';
+                }
+
+                function selectImage(event) {
+                const images = event.target.parentElement.querySelectorAll('img');
+                images.forEach(img => img.classList.remove('selected'));
+                event.target.classList.add('selected');
+                }
+            </script>
+            </head>
+
+            <body>
+            <!-- Floating Bubbles -->
+            <div class="bubble" style="width: 80px; height: 80px; left: 10%; bottom: 10%; animation-delay: 0s;"></div>
+            <div class="bubble" style="width: 60px; height: 60px; left: 30%; bottom: 20%; animation-delay: 2s;"></div>
+            <div class="bubble" style="width: 100px; height: 100px; left: 60%; bottom: 15%; animation-delay: 4s;"></div>
+            <div class="bubble" style="width: 50px; height: 50px; left: 80%; bottom: 25%; animation-delay: 1s;"></div>
+
+            <main>
+                <!-- Header -->
+                <header class="header-bar">
+                <div class="logo">INVITO ROYALE</div>
+                <nav class="nav-links">
+                    <a href="create.html">Create</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                </header>
+
+                <!-- Navigation -->
+                <nav>
+                <a href="#" onclick="showInvitation('birthday')">Birthday</a>
+                <a href="#" onclick="showInvitation('marriage')">Marriage</a>
+                <a href="#" onclick="showInvitation('concert')">Concert</a>
+                <a href="#" onclick="showInvitation('dinner')">Dinner Party</a>
+                <a href="#" onclick="showInvitation('grouptrip')">Group Trip</a>
+                </nav>
+
+                <!-- Example: Birthday Container (copy/paste rest from original as needed) -->
+                <div id="birthday" class="container">
+                <h2>You're Invited to a Birthday Party!</h2>
+                <p>Join us for a fun-filled celebration!</p>
+                <form action="add_this.php" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="event_name" placeholder="Name Your Event" required />
+                    <input type="date" name="event_date" required />
+                    <input type="text" name="hosted_by" placeholder="Hosted By" required />
+                    <input type="text" name="location" placeholder="Location" required />
+                    <textarea name="description" placeholder="Add a Description"></textarea>
+                    <label>Select an Image:</label>
+                    <div class="image-container" onclick="selectImage(event)">
+                      <img src="https://tse2.mm.bing.net/th?id=OIP.O--LmbJ_hSXTpH6HSwGm-wHaEo&pid=Api&P=0&h=180" />
+                      <img src="https://tse1.mm.bing.net/th?id=OIP.KInk7kBUHGM8e1HZr5ah7AHaHe&pid=Api&P=0&h=180" />
+                      <img src="https://tse3.mm.bing.net/th?id=OIP.xSj424DLGrKGB3cDIiY6KwHaEc&pid=Api&P=0&h=180" />
+                    </div>
+                    <input type="file" name="custom_image" accept="image/*" />
+                    <button type="submit">Create Invitation</button>
+                  </form>
+                  
+                </div>
+                
+                <div id="marriage" class="container">
+                    <h2>Wedding Invitation</h2>
+                    <p>We are tying the knot! Come celebrate with us.</p>
+                    <form>
+                        <input type="text" placeholder="Name Your Event">
+                        <input type="date" placeholder="Set a Date">
+                        <input type="text" placeholder="Hosted By">
+                        <input type="text" placeholder="Location">
+                        <textarea placeholder="Add a Description"></textarea>
+                        <label>Select an Image:</label>
+                        <div class="image-container" onclick="selectImage(event)">
+                            <img src="https://www.liveenhanced.com/wp-content/uploads/2019/09/wedding-decoration-10.jpg" alt="Wedding Image 1">
+                            <img src="https://wallpaperboat.com/wp-content/uploads/2020/11/02/58880/wedding-19.jpg" alt="Wedding Image 2">
+                            <img src="https://tse1.mm.bing.net/th?id=OIP.PHtlgQdKLRrzR7LELA-qnAHaEK&pid=Api&P=0&h=180" alt="Wedding Image 3">
+                        </div>
+                        <input type="file" accept="image/*">
+                        <a href="add_this.html" class="button">Create Invitation</a>
+                    </form>
+                </div>
+                <div id="concert" class="container">
+                    <h2>Concert Invitation</h2>
+                    <p>Experience an amazing night of music and fun!</p>
+                    <form>
+                        <input type="text" placeholder="Name Your Event">
+                        <input type="date" placeholder="Set a Date">
+                        <input type="text" placeholder="Hosted By">
+                        <input type="text" placeholder="Location">
+                        <input type="number" placeholder="Cost per Person">
+                        <textarea placeholder="Add a Description"></textarea>
+                        <label>Select an Image:</label>
+                        <div class="image-container" onclick="selectImage(event)">
+                            <img src="https://cdn.wallpapersafari.com/98/90/mjHyV5.jpg" alt="Concert Image 1">
+                            <img src="https://tse3.mm.bing.net/th?id=OIP.auf_QDXFgrxK5RujsytxYQHaEl&pid=Api&P=0&h=180" alt="Concert Image 2">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/024/603/806/small_2x/rock-music-concert-background-illustration-ai-generative-free-photo.jpg" alt="Concert Image 3">
+                        </div>
+                        <input type="file" accept="image/*">
+                        <a href="add_this.html" class="button">Create Invitation</a>
+                    </form>
+                </div>
+                
+                <div id="dinner" class="container">
+                    <h2>Dinner Party Invitation</h2>
+                    <p>Enjoy a wonderful evening with great food and company!</p>
+                    <form>
+                        <input type="text" placeholder="Name Your Event">
+                        <input type="date" placeholder="Set a Date">
+                        <input type="text" placeholder="Hosted By">
+                        <input type="text" placeholder="Location">
+                        <input type="number" placeholder="Cost per Person">
+                        <textarea placeholder="Add a Description"></textarea>
+                        <label>Select an Image:</label>
+                        <div class="image-container" onclick="selectImage(event)">
+                            <img src="https://tse3.mm.bing.net/th?id=OIP.Vl2hL-xQzB-lTwxMQ5ancwHaE8&pid=Api&P=0&h=180" alt="Dinner Image 1">
+                            <img src="https://tse1.mm.bing.net/th?id=OIP.5eJfx4EeaijixCKJrGFxhwHaH0&pid=Api&P=0&h=180" alt="Dinner Image 2">
+                            <img src="https://tse1.mm.bing.net/th?id=OIP.SKQcMmfh_qF28EENs4fpXwHaE8&pid=Api&P=0&h=180" alt="Dinner Image 3">
+                        </div>
+                        <input type="file" accept="image/*">
+                        <button type="submit">Create Invitation</button>
+                    </form>
+                </div>
+                
+                <div id="grouptrip" class="container">
+                    <h2>Group Trip Invitation</h2>
+                    <p>Let's go on an adventure together!</p>
+                    <form>
+                        <input type="text" placeholder="Name Your Event">
+                        <input type="date" placeholder="Set a Date">
+                        <input type="text" placeholder="Hosted By">
+                        <input type="text" placeholder="Location">
+                        <input type="number" placeholder="Cost per Person">
+                        <textarea placeholder="Add a Description"></textarea>
+                        <label>Select an Image:</label>
+                        <div class="image-container" onclick="selectImage(event)">
+                            <img src="https://topyourtravel.com/images/images/68.jpg" alt="Trip Image 1">
+                            <img src="https://tse3.mm.bing.net/th?id=OIP.9StA6_zBlvXoxAs1BuGVIgHaE8&pid=Api&P=0&h=180" alt="Trip Image 2">
+                            <img src="https://purewander.com/wp-content/uploads/2019/08/more-groups-on-cliff-over-ocean.jpg" alt="Trip Image 3">
+                        </div>
+                        <input type="file" accept="image/*">
+                        <button type="submit">Create Invitation</button>
+                    </form>
+                </div>
+
+                <!-- Repeat for other containers: marriage, concert, dinner, grouptrip -->
+
+            </main>
+
+            <footer>
+                <p>&copy; 2025 Invito Royale. All rights reserved.</p>
+            </footer>
+            </body>
+            </html>

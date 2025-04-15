@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invito Royale : Your Event , Your Style</title>
+    <link rel="stylesheet" href="x_main1.css">
+   
+    <script>
+        function showInvitation(type) {
+            document.querySelectorAll('.container').forEach(div => div.style.display = 'none');
+            document.getElementById(type).style.display = 'block';
+        }
+        function selectImage(event) {
+            const images = event.target.parentElement.querySelectorAll('img');
+            images.forEach(img => img.classList.remove('selected'));
+            event.target.classList.add('selected');
+        }
+    </script>
+
+</head>                
+<body>
+    <!-- Floating Bubbles Background -->
+<div class="bubble" style="width: 80px; height: 80px; left: 10%; bottom: 10%; animation-delay: 0s;"></div>
+<div class="bubble" style="width: 60px; height: 60px; left: 30%; bottom: 20%; animation-delay: 2s;"></div>
+<div class="bubble" style="width: 100px; height: 100px; left: 60%; bottom: 15%; animation-delay: 4s;"></div>
+<div class="bubble" style="width: 50px; height: 50px; left: 80%; bottom: 25%; animation-delay: 1s;"></div>
+
+    <!-- Intro Loading Screen -->
+    <div id="loader">
+      <div class="overlay"></div>
+     
+      <p class="loader-text">WELCOME TO INVITO ROYALE!</p>
+    </div>
+        
+    
+    <main>
+      <header class="header-bar">
+        <div class="logo">INVITO ROYALE</div>
+        <nav class="nav-links">
+            <a href="create.html">Create</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    
+              </nav>
+            </div>
+          </header>
+          
+ 
+   
+
+    
+    </main>
+    <footer>
+        <p>&copy; 2025 Invito Royale. All rights reserved.</p>
+      </footer>
+      <script>
+        window.addEventListener("load", () => {
+          setTimeout(() => {
+            const loader = document.getElementById("loader");
+            loader.classList.add("fade-out");
+            setTimeout(() => loader.style.display = "none", 1000); // wait for fade
+          }, 2000); // loader shows for 5 seconds
+        });
+      </script>
+      
+      
+</body>
+</html>
+  
